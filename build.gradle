@@ -25,8 +25,8 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-    mainModule = 'com.example.demochat.demochat'
-    mainClass = 'com.example.demochat.demochat.HelloApplication'
+    mainModule = 'com.example.demochat'
+    mainClass = 'com.example.demochat.HelloApplication'
 }
 
 [compileKotlin, compileTestKotlin].forEach {
@@ -41,7 +41,7 @@ javafx {
 }
 
 dependencies {
-    implementation('org.kordamp.ikonli:ikonli-javafx:12.3.0')
+    implementation('org.kordamp.ikonli:ikonli-javafx:12.3.1')
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")

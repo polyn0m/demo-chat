@@ -1,4 +1,4 @@
-package com.example.demochat.demochat
+package com.example.demochat
 
 import javafx.fxml.FXML
 import javafx.scene.control.Label

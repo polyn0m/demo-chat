@@ -1,4 +1,4 @@
-package com.example.demochat.demochat
+package com.example.demochat
 
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
