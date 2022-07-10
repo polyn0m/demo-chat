@@ -1,4 +1,4 @@
-package com.example.demochat.models
+package com.example.demochat.models.responses
 
 data class WhoResponse(
     val id: String,

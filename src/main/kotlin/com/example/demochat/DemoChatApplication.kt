@@ -7,8 +7,6 @@ import javafx.stage.Stage
 
 class DemoChat : Application() {
     override fun start(stage: Stage) {
-        val server = ServerApi()
-
         stage.minWidth = 800.0
         stage.minHeight = 600.0
 

@@ -14,7 +14,8 @@ repositories {
 }
 
 ext {
-    libOkHttp = '4.9.3'
+    libCoroutines = '1.6.2'
+    libOkHttp = '4.10.0'
     libRetrofit = '2.9.0'
 
     junitVersion = '5.8.2'
@@ -46,18 +47,19 @@ javafx {
 dependencies {
     implementation('org.kordamp.ikonli:ikonli-javafx:12.3.1')
 
-    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+    //coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${libCoroutines}")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-javafx:${libCoroutines}")
 
     // okhttp
     implementation("com.squareup.okhttp3:okhttp:${libOkHttp}")
-    implementation("com.squareup.okhttp3:logging-interceptor:${libOkHttp}")
-    implementation("com.squareup.okhttp3:okhttp-urlconnection:${libOkHttp}")
 
     // retrofit
     implementation("com.squareup.retrofit2:retrofit:${libRetrofit}")
     implementation("com.squareup.retrofit2:converter-gson:${libRetrofit}")
 
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
 
 test {
