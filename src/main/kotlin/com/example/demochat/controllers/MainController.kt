@@ -57,6 +57,8 @@ class MainController(
         }
 
         loadChatList()
+
+        chatServer.connectToChat()
     }
 
     fun load(user: UserModel) {

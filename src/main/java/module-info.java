@@ -15,6 +15,7 @@ module com.example.demochat {
     opens com.example.demochat.controllers to javafx.fxml;
     opens com.example.demochat.cells to javafx.fxml;
     opens com.example.demochat.models.responses to gson;
+    opens com.example.demochat.models.messages to gson;
 
     exports com.example.demochat;
 }

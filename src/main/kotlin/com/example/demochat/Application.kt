@@ -48,6 +48,8 @@ class DemoChat : Application() {
         currentStage?.minWidth = 1024.0
         currentStage?.minHeight = 600.0
         currentStage?.setOnCloseRequest {
+            chatServer.disconnect()
+
             showAuthScene()
         }
 
