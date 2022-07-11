@@ -1,6 +1,7 @@
 package com.example.demochat.controllers
 
 import com.example.demochat.DemoChat
+import com.example.demochat.models.views.CurrentUserModel
 import com.example.demochat.services.ChatServer
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
@@ -33,6 +34,10 @@ class AuthController(
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         loginField.requestFocus()
+
+        buttonSubmit.setOnAction {
+            onSubmitButtonClick()
+        }
     }
 
     fun load() {
@@ -44,7 +49,6 @@ class AuthController(
         }
     }
 
-    @FXML
     private fun onSubmitButtonClick() = launch {
         chatServer.login = loginField.text
         chatServer.password = passwordField.text
@@ -52,7 +56,9 @@ class AuthController(
         try {
             val whoAmI = chatServer.httpApi.getWho()
 
-            application.showMainScene()
+            application.showMainScene(
+                CurrentUserModel(whoAmI.id, whoAmI.name, whoAmI.surname, whoAmI.patronymic)
+            )
         } catch (_: Exception) {
 
         }

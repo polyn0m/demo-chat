@@ -31,6 +31,8 @@ tasks.withType(JavaCompile) {
 application {
     mainModule = 'com.example.demochat'
     mainClass = 'com.example.demochat.DemoChat'
+
+    applicationDefaultJvmArgs = ["--add-reads", "kotlin.stdlib=kotlinx.coroutines.core.jvm"]
 }
 
 [compileKotlin, compileTestKotlin].forEach {

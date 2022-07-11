@@ -2,11 +2,13 @@ package com.example.demochat
 
 import com.example.demochat.controllers.AuthController
 import com.example.demochat.controllers.MainController
+import com.example.demochat.models.views.CurrentUserModel
 import com.example.demochat.services.ChatServer
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
 import javafx.stage.Stage
+import kotlin.system.exitProcess
 
 class DemoChat : Application() {
     private val chatServer = ChatServer()
@@ -17,28 +19,45 @@ class DemoChat : Application() {
     private val mainController = MainController(this, chatServer)
 
     override fun start(stage: Stage) {
-        currentStage = stage
-
-        stage.title = "Demo chat"
-
         showAuthScene()
-
-        stage.show()
     }
 
     fun showAuthScene() {
+        currentStage?.close()
+
+        currentStage = Stage()
+
+        currentStage?.title = "Study\\chat"
+        currentStage?.minWidth = 580.0
+        currentStage?.minHeight = 500.0
+        currentStage?.setOnCloseRequest {
+            exitProcess(0)
+        }
+
         authController.load()
 
         currentStage?.scene = authController.scene
 
-        currentStage?.minWidth = 580.0
-        currentStage?.minHeight = 500.0
+        currentStage?.show()
     }
 
-    fun showMainScene() {
-        mainController.load()
+    fun showMainScene(user: CurrentUserModel) {
+        currentStage?.close()
 
-        currentStage?.scene = authController.scene
+        currentStage = Stage()
+
+        currentStage?.title = "Study\\chat"
+        currentStage?.minWidth = 1024.0
+        currentStage?.minHeight = 600.0
+        currentStage?.setOnCloseRequest {
+            showAuthScene()
+        }
+
+        mainController.load(user)
+
+        currentStage?.scene = mainController.scene
+
+        currentStage?.show()
     }
 }
 
