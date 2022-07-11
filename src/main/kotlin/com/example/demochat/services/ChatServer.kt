@@ -1,19 +1,20 @@
-package com.example.demochat
+package com.example.demochat.services
 
 import com.example.demochat.models.responses.WhoResponse
 import okhttp3.Credentials
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import java.util.concurrent.TimeUnit
 
-class ServerApi {
+class ChatServer {
     private val serverUrl = "http://localhost:8080/"
 
     var login = ""
     var password = ""
 
-    private val client = OkHttpClient.Builder()
+    private val httpClient = OkHttpClient.Builder()
         .connectTimeout(10, TimeUnit.SECONDS)
         .readTimeout(30, TimeUnit.SECONDS)
         .writeTimeout(30, TimeUnit.SECONDS)
@@ -24,14 +25,15 @@ class ServerApi {
         }
         .build()
 
-    val api = Retrofit.Builder()
+    val httpApi: Api = Retrofit.Builder()
         .baseUrl(serverUrl)
-        .client(client)
+        .client(httpClient)
+        .addConverterFactory(GsonConverterFactory.create())
         .build()
         .create(Api::class.java)
 
     interface Api {
         @GET("/api/v1/auth/who/")
-        fun getWho(): WhoResponse
+        suspend fun getWho(): WhoResponse
     }
 }

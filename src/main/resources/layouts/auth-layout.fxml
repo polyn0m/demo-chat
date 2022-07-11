@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="authRoot" prefHeight="400.0" prefWidth="600.0" stylesheets="@../styles/auth.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane fx:id="bannerContainer" maxHeight="85.0" minHeight="85.0">
+         <children>
+            <Label fx:id="bannerHeader" text="Study\Chat" />
+         </children>
+      </StackPane>
+      <VBox fx:id="formContainer" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="12.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label fx:id="welcomeLabel" text="Введите логин и пароль">
+               <VBox.margin>
+                  <Insets bottom="16.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="loginField" alignment="CENTER" maxWidth="210.0" minWidth="210.0" promptText="Логин" />
+            <PasswordField fx:id="passwordField" alignment="CENTER" maxWidth="210.0" minWidth="210.0" promptText="Пароль" />
+            <Button fx:id="buttonSubmit" minWidth="210.0" mnemonicParsing="false" onAction="#onSubmitButtonClick" text="Войти" />
+         </children>
+      </VBox>
+   </children>
+</VBox>

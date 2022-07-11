@@ -1,0 +1,49 @@
+#authRoot {
+    -fx-background-color: #FFFFFF;
+}
+
+#bannerContainer {
+    -fx-background-color: #333333;
+}
+
+#bannerHeader {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 36;
+}
+
+#welcomeLabel {
+    -fx-text-fill: #333333;
+    -fx-font-size: 16;
+}
+
+.text-field {
+    -fx-font-size: 16;
+    -fx-border-radius: 2;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: #A8B6DC;
+    -fx-padding: 8 12 8 12;
+    -fx-prompt-text-fill: #A8B6DC;
+}
+.text-field:hover {
+    -fx-border-color: #A2AFD0;
+}
+.text-field:focused {
+    -fx-border-color: #2458DE;
+    -fx-faint-focus-color: transparent;
+    -fx-prompt-text-fill: transparent;
+}
+
+#buttonSubmit {
+    -fx-border-radius: 2;
+    -fx-background-color: #2458DE;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 16;
+}
+
+#buttonSubmit:hover {
+    -fx-background-color: #2251CB;
+}
+
+#buttonSubmit:active {
+    -fx-background-color: #1344C3;
+}
