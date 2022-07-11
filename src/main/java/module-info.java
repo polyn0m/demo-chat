@@ -10,8 +10,10 @@ module com.example.demochat {
     requires retrofit2;
     requires kotlinx.coroutines.core.jvm;
     requires retrofit2.converter.gson;
+    requires gson;
 
     opens com.example.demochat.controllers to javafx.fxml;
+    opens com.example.demochat.cells to javafx.fxml;
     opens com.example.demochat.models.responses to gson;
 
     exports com.example.demochat;

@@ -1,5 +1,6 @@
 package com.example.demochat.services
 
+import com.example.demochat.models.responses.ContactsListResponse
 import com.example.demochat.models.responses.WhoResponse
 import okhttp3.Credentials
 import okhttp3.OkHttpClient
@@ -35,5 +36,7 @@ class ChatServer {
     interface Api {
         @GET("/api/v1/auth/who/")
         suspend fun getWho(): WhoResponse
+        @GET("/api/v1/list/contacts/")
+        suspend fun getContactsList(): ContactsListResponse
     }
 }

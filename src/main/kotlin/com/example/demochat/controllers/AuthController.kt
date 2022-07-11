@@ -1,7 +1,7 @@
 package com.example.demochat.controllers
 
 import com.example.demochat.DemoChat
-import com.example.demochat.models.views.CurrentUserModel
+import com.example.demochat.models.views.UserModel
 import com.example.demochat.services.ChatServer
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
@@ -57,7 +57,7 @@ class AuthController(
             val whoAmI = chatServer.httpApi.getWho()
 
             application.showMainScene(
-                CurrentUserModel(whoAmI.id, whoAmI.name, whoAmI.surname, whoAmI.patronymic)
+                UserModel(whoAmI.id, whoAmI.name, whoAmI.surname, whoAmI.patronymic)
             )
         } catch (_: Exception) {
 

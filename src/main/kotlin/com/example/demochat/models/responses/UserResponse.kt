@@ -1,6 +1,6 @@
 package com.example.demochat.models.responses
 
-data class WhoResponse(
+data class UserResponse(
     val id: Int,
     val name: String,
     val surname: String,

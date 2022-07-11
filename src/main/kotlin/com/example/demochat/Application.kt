@@ -2,11 +2,9 @@ package com.example.demochat
 
 import com.example.demochat.controllers.AuthController
 import com.example.demochat.controllers.MainController
-import com.example.demochat.models.views.CurrentUserModel
+import com.example.demochat.models.views.UserModel
 import com.example.demochat.services.ChatServer
 import javafx.application.Application
-import javafx.fxml.FXMLLoader
-import javafx.scene.Scene
 import javafx.stage.Stage
 import kotlin.system.exitProcess
 
@@ -41,7 +39,7 @@ class DemoChat : Application() {
         currentStage?.show()
     }
 
-    fun showMainScene(user: CurrentUserModel) {
+    fun showMainScene(user: UserModel) {
         currentStage?.close()
 
         currentStage = Stage()
